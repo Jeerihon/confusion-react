@@ -6,6 +6,7 @@ import Home from "./HomeComponent";
 import Menu from "./MenuComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
+import DishDetail from "./DishdetailComponent";
 
 import { DISHES } from "../shared/dishes";
 import { COMMENTS } from "../shared/comments";
@@ -45,6 +46,16 @@ class Main extends Component {
             exact
             path="/menu"
             component={() => <Menu dishes={this.state.dishes} />}
+          />
+
+          <Route
+            path='/menu/:dishId'
+            component={({ match }) => (
+              <DishDetail
+                dish={this.state.dishes.find((dish) => dish.id === parseInt(match.params.dishId, 10))}
+                comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))}
+              />
+            )}
           />
 
           <Route path="/contactus" component={() => <Contact />} />
