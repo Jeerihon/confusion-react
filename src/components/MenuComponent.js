@@ -29,7 +29,8 @@ const Menu = ({ dishes, onClick }) => (
 
               <CardImgOverlay>
                 <CardTitle>{dish.name}</CardTitle>
-              </CardImgOverlay></Link>
+              </CardImgOverlay>
+            </Link>
           </Card>
         </div>
       ))}

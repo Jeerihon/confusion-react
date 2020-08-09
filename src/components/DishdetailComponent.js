@@ -11,6 +11,8 @@ import {
   BreadcrumbItem,
 } from 'reactstrap';
 
+import CommentForm from './CommentForm';
+
 function renderDish({ image, name, description }) {
   return (
     <Card>
@@ -48,6 +50,8 @@ function renderComments(comments) {
           </li>
         ))}
       </ul>
+
+      <CommentForm />
     </div>
   );
 }
